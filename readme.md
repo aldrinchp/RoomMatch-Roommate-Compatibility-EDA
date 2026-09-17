@@ -1,104 +1,104 @@
-## 📊 Análisis Exploratorio de Datos (EDA) - Compatibilidad de Roommates
+## 📊 Exploratory Data Analysis (EDA) - Roommate Compatibility
 
-## 📋 Descripción General
-Este proyecto realiza un análisis exploratorio de datos sobre preferencias de convivencia para identificar compatibilidades entre potenciales roommates. El dataset contiene 750 registros con 15 variables relacionadas con hábitos, personalidad y preferencias de estilo de vida.
+## 📋 Overview
+This project performs an exploratory data analysis on cohabitation preferences to identify compatibility between potential roommates. The dataset contains 750 records with 15 variables related to habits, personality, and lifestyle preferences.
 
-## 🎯 Objetivo Principal
-Identificar relaciones significativas entre variables categóricas usando pruebas de Chi-cuadrado y visualizar los patrones de compatibilidad mediante gráficos de barras y barras apiladas
+## 🎯 Main Objective
+Identify significant relationships between categorical variables using Chi-square tests and visualize compatibility patterns through bar charts and stacked bar charts.
 
-## 🔧 Características Principales
-- Análisis Chi-cuadrado entre variables categóricas y el v de Cramer para determinar la fuerza de la relación en caso de existir
-- Visualizaciones con gráficos de barras y barras apiladas
-- Cálculo de poder estadístico
+## 🔧 Main Features
+- Chi-square analysis between categorical variables and Cramér's V to determine the strength of the relationship, if any
+- Visualizations with bar charts and stacked bar charts
+- Statistical power calculation
 
-## 🔧 Metodología Implementada
-1. Preparación de Datos
-Carga y verificación del dataset
+## 🔧 Methodology Implemented
+1. Data Preparation
+Dataset loading and verification
 
-Selección de variables relevantes para análisis de compatibilidad
+Selection of relevant variables for compatibility analysis
 
-Transformación de variables categóricas
+Transformation of categorical variables
 
-Ordenamiento categórico para privacy_importance
+Categorical ordering for privacy_importance
 
 
-Agrupación de social_energy_rating en categorías: "Unsocial", "Neutral", "Very Social"
-## 📊 Resultados
-Se identificaron relaciones significativas entre las variables profession y room_type_preference.
+Grouping of social_energy_rating into categories: "Unsocial", "Neutral", "Very Social"
+## 📊 Results
+Significant relationships were identified between the variables profession and room_type_preference.
 
-## 📈 Hallazgos Clave
-El análisis revela patrones de compatibilidad en:
+## 📈 Key Findings
+The analysis reveals compatibility patterns in:
 
-profession y room_type_preference.
+profession and room_type_preference.
 
-work_shift y dietary_restrictions
+work_shift and dietary_restrictions
 
-bedtime y dietary_restrrictions
+bedtime and dietary_restrrictions
 
-## 🛠️ Tecnologías
+## 🛠️ Technologies
 
 - Python
 - Pandas
 - Scipy
 - Matplotlib
 
-##  Análisis Estadístico 
+##  Statistical Analysis 
 
-# Chi-cuadrado
+# Chi-square
 
-###  Cálculo de correlaciones entre variables categóricas
+###  Calculation of correlations between categorical variables
 ```
 chi2, p_value, dof, expected = chi2_contingency(tabla_contingencia)
 ```
-Propósito: Determinar si existe relación estadísticamente significativa entre pares de variables categóricas.
+Purpose: Determine whether there is a statistically significant relationship between pairs of categorical variables.
 
-Interpretación:
+Interpretation:
 
-p-value < 0.05: Relación significativa
+p-value < 0.05: Significant relationship
 
-p-value ≥ 0.05: No hay evidencia de relación
+p-value ≥ 0.05: No evidence of a relationship
 
-# V de Cramer
-La V de Cramér es una medida de asociación entre dos variables categóricas que va de 0 a 1, donde:
+# Cramér's V
+Cramér's V is a measure of association between two categorical variables ranging from 0 to 1, where:
 
-0 = No hay asociación entre las variables
+0 = No association between the variables
 
-1 = Asociación perfecta entre las variables
+1 = Perfect association between the variables
 
 ```
 v_cramer = np.sqrt(chi2 / (n * (min(tabla_contongencia.shape) - 1)))
 ```
 
-Interpretación
+Interpretation
 
-0.00 - 0.10:    Asociación nula o muy débil 
+0.00 - 0.10:    Null or very weak association 
 
-0.10 - 0.20:    Asociación débil 
+0.10 - 0.20:    Weak association 
 
-0.20 - 0.30:    Asociación moderada 
+0.20 - 0.30:    Moderate association 
 
-0.30 - 0.40:    Asociación relativamente fuerte 
+0.30 - 0.40:    Relatively strong association 
 
-0.40 - 0.50:    Asociación fuerte 
+0.40 - 0.50:    Strong association 
 
-0.50 - 1.00:    Asociación muy fuerte a perfecta 
+0.50 - 1.00:    Very strong to perfect association 
 
-## 📊 Poder Estadístico
+## 📊 Statistical Power
 
-El cálculo del poder estadístico complementa el análisis Chi-cuadrado, determinando la probabilidad de detectar efectos reales en la población, considerando:
+The statistical power calculation complements the Chi-square analysis, determining the probability of detecting real effects in the population, considering:
 
-Tamaño de muestra (n=750)
+Sample size (n=750)
 
-Nivel de significancia (α=0.05)
+Significance level (α=0.05)
 
-Tamaño del efecto observado
+Observed effect size
 
 
-Este enfoque asegura que las correlaciones identificadas sean tanto estadísticamente significativas como prácticamente relevantes para la toma de decisiones sobre compatibilidad de roommates.
+This approach ensures that the identified correlations are both statistically significant and practically relevant for decision-making on roommate compatibility.
 
 ---
 
-> **Autores**
+> **Authors**
 
 > 1. Aldrin Chávez
 > 2. Kevin Sánchez
